@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="com.maqian.pojo">
+	<class name="Dept" table="dept">
+		
+		<id name="deptid">
+			<generator class="identity"></generator>
+		</id>
+		
+		<property name="deptname"></property>
+		<property name="deptnum"></property>
+		<property name="deptdesc"></property>
+		
+		<!-- <set name="emps">
+			<key column="deptid"></key>
+			<one-to-many class="Emp"/>
+		</set> -->
+		
+		<list name="emps">
+			<key column="deptid"></key>
+			<list-index>
+				<column name="deptid"></column>
+			</list-index>
+			<one-to-many class="Emp"/>
+		</list>
+		
+	</class>
+</hibernate-mapping>

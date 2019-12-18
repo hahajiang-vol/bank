@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="com.maqian.pojo">
+	<class name="Emp" table="emp">
+		
+		<id name="empid">
+			<generator class="identity"></generator>
+		</id>
+		
+		<property name="empname"></property>
+		<property name="empsex"></property>
+		<property name="empage"></property>
+		<property name="empphone"></property>
+		<property name="empaddress"></property>
+		<property name="empdate"></property>
+		<property name="deptid"></property>
+		
+		<!-- <many-to-one name="dept" column="deptid" class="Dept" lazy="false"></many-to-one> -->
+	</class>
+</hibernate-mapping>
